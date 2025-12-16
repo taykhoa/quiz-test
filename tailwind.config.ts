@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-export default {
+export default <Config>{
   darkMode: 'class',
   content: [
     './app/**/*.{vue,js,ts}',
@@ -10,4 +10,4 @@ export default {
     extend: {},
   },
   plugins: [],
-} satisfies Config
+}
