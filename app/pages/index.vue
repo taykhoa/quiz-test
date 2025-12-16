@@ -1,80 +1,64 @@
-<template>
-  <main class="container">
-    <section class="hero">
-      <header>
-        <h1 class="hero-title">
-          🔥 Lò Hóa Vui
-        </h1>
-        <p class="hero-subtitle">
-          Nền tảng học Hóa học trực quan, dễ hiểu và hiện đại dành cho học sinh THPT.
-          Tập trung vào <strong>bản chất – tư duy – thí nghiệm</strong>, thay vì học thuộc máy móc.
-        </p>
-      </header>
-    </section>
+<script setup>
+/*
+  Nuxt 3 có sẵn useColorMode()
+  → đúng chuẩn Obsidian: đổi class trên <html>
+*/
 
-    <section class="card card-no-indent"> 
-      <h2>Giới thiệu</h2>
+const colorMode = useColorMode()
 
-      <p>
-        <strong>Lò Hóa Vui</strong> được xây dựng với mục tiêu giúp học sinh THPT
-        tiếp cận Hóa học một cách <strong>dễ hiểu, trực quan và có hệ thống</strong>.
-      </p>
-
-      <p>
-        Thay vì học thuộc máy móc, học sinh được khuyến khích
-        <em>quan sát – phân tích – suy luận</em> thông qua thí nghiệm,
-        mô phỏng, bài tập tư duy và ví dụ gắn với thực tế.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Vì sao chọn Lò Hóa Vui?</h2>
-
-      <ul>
-        <li>Nội dung bám sát chương trình Hóa học THPT</li>
-        <li>Trình bày rõ ràng, ưu tiên bản chất thay vì ghi nhớ</li>
-        <li>Thí nghiệm và ví dụ được chọn lọc, an toàn, dễ triển khai</li>
-        <li>Phù hợp cho tự học, ôn tập và mở rộng kiến thức</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Định hướng phát triển</h2>
-
-      <ul>
-        <li>Bài học theo từng chủ đề Hóa học THPT (10 – 11 – 12)</li>
-        <li>Thí nghiệm Hóa học lượng nhỏ, dễ làm tại lớp và ở nhà</li>
-        <li>Mô phỏng – hình ảnh – video minh họa trực quan</li>
-        <li>Học liệu hỗ trợ giáo viên và học sinh tự học</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-brand">
-        🔥 <strong>Lò Hóa Vui</strong>
-      </p>
-
-      <p class="footer-text">
-        Nền tảng học Hóa học trực quan dành cho học sinh THPT.
-        Học để hiểu bản chất – không học thuộc máy móc.
-      </p>
-
-      <p class="footer-meta">
-        © {{ currentYear }} Lò Hóa Vui · Made with 💙 for Chemistry
-      </p>
-    </div>
-  </footer>
-</template>
-
-<script>
-export default {
-  // Logic để tính năm hiện tại
-  data() {
-    return {
-      currentYear: new Date().getFullYear()
-    }
-  }
+const toggleTheme = () => {
+  colorMode.preference =
+    colorMode.preference === 'dark' ? 'light' : 'dark'
 }
 </script>
+
+<template>
+  <!-- Theme toggle -->
+  <button class="theme-toggle" @click="toggleTheme">
+    {{ colorMode.value === 'dark' ? '☀️' : '🌙' }}
+  </button>
+
+  <!-- Hero -->
+  <section class="container hero">
+    <h1>🔥 Lò Hóa Vui</h1>
+
+    <p class="tagline">
+      Nền tảng học Hóa học <strong>bản chất</strong>,
+      bằng <strong>tư duy</strong> và <strong>thí nghiệm</strong> –
+      không học thuộc máy móc.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn primary">🚀 Bắt đầu học</button>
+      <button class="btn">📘 Xem lộ trình</button>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="card">
+        <h3>🧠 Học bản chất</h3>
+        <p>
+          Hiểu vì sao phản ứng xảy ra, không chỉ ghi nhớ phương trình.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🔬 Thí nghiệm & mô phỏng</h3>
+        <p>
+          Quan sát – phân tích – suy luận thông qua thí nghiệm trực quan.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📐 Tư duy hóa học</h3>
+        <p>
+          Rèn cách suy nghĩ của người học Hóa, không học mẹo rời rạc.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Lò Hóa Vui – Học Hóa học một cách thông minh
+  </footer>
+</template>
