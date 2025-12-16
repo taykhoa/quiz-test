@@ -1,18 +1,10 @@
-// nuxt.config.ts
 export default defineNuxtConfig({
-  modules: [
-    '@nuxtjs/color-mode'
-  ],
-
-  css: [
-    '~/assets/css/main.css'
-  ],
+  css: ['~/assets/css/main.css'],
+  modules: ['@nuxtjs/color-mode'],
 
   colorMode: {
-    classSuffix: '',     // ⭐ để Tailwind nhận dark:
-    preference: 'system',
-    fallback: 'light'
+    classSuffix: '',
+    preference: 'dark',   // 👈 mặc định dark
+    fallback: 'dark',     // 👈 SSR cũng dark
   },
-
-  compatibilityDate: '2025-12-15'
 })

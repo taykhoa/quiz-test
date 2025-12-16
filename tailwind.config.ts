@@ -1,17 +1,16 @@
-// tailwind.config.ts
-import type { Config } from 'tailwindcss'
-
-export default <Partial<Config>>{
-  darkMode: 'class', // ⭐ bắt buộc
+export default {
+  darkMode: 'class',
 
   content: [
+    './app.vue',                 // ⭐⭐⭐ QUAN TRỌNG
     './app/**/*.{vue,js,ts}',
-    './components/**/*.{vue,js,ts}'
+    './components/**/*.{vue,js,ts}',
+    './pages/**/*.{vue,js,ts}',
+    './layouts/**/*.{vue,js,ts}',
   ],
 
   theme: {
-    extend: {}
+    extend: {},
   },
-
-  plugins: []
+  plugins: [],
 }

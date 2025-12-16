@@ -1,53 +1,99 @@
 <script setup>
-// Nuxt 3 tự động import useColorMode()
-const colorMode = useColorMode()
-
-const toggleTheme = () => {
-  // Logic SỬA LỖI: Thay đổi 'colorMode.value' thành 'colorMode.preference'
-  // 'preference' là thuộc tính cần thay đổi để module lưu và áp dụng class 'dark'
-  
-  if (colorMode.preference === 'dark') {
-    colorMode.preference = 'light'
-  } else {
-    // Nếu đang là 'light' (hoặc 'system'), chuyển sang 'dark'
-    colorMode.preference = 'dark'
-  }
-}
+import GhCard from '~/components/GhCard.vue'
+import ThemeToggle from '~/components/ThemeToggle.vue'
 </script>
 
 <template>
-  <div class="p-8 space-y-6 max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-blue-600 dark:text-blue-400">
-      🔥 Lò Hóa Vui
-    </h1>
+  <main class="p-8 space-y-10 max-w-5xl">
+    <!-- Header -->
+    <header class="flex items-start justify-between">
+      <div class="space-y-2">
+        <h1
+          class="text-4xl font-bold"
+          style="color: var(--accent)"
+        >
+          🔥 Lò Hóa Vui
+        </h1>
 
-    <p class="text-lg text-zinc-800 dark:text-zinc-200">
-      Nền tảng học Hóa học trực quan, dễ hiểu và hiện đại dành cho học sinh THPT.
-    </p>
+        <p
+          class="text-base max-w-2xl"
+          style="color: var(--text-muted)"
+        >
+          Nền tảng học Hóa học trực quan, dễ hiểu và hiện đại dành cho học sinh THPT.
+        </p>
+      </div>
 
-    <button
-      @click="toggleTheme"
-      class="px-4 py-2 rounded-md transition-colors duration-200
-             bg-zinc-200 dark:bg-zinc-700
-             hover:bg-zinc-300 dark:hover:bg-zinc-600
-             text-zinc-900 dark:text-zinc-100"
-    >
-      {{ colorMode.value === 'dark' ? '☀ Chế độ sáng' : '🌙 Chế độ tối' }}
-    </button>
+      <!-- Toggle dark / light -->
+      <ThemeToggle />
+    </header>
 
-    <section class="space-y-4 text-zinc-800 dark:text-zinc-200">
-      <h2 class="text-2xl font-semibold">👨‍🎓 Dành cho học sinh</h2>
-      <p>Nội dung bám sát chương trình, dễ tự học.</p>
+    <!-- Giới thiệu -->
+    <GhCard>
+      <h2
+        class="text-base font-semibold mb-2"
+        style="color: var(--text-main)"
+      >
+        Giới thiệu
+      </h2>
 
-      <h2 class="text-2xl font-semibold">🧪 Hóa học trực quan</h2>
-      <p>Thí nghiệm lượng nhỏ, mô phỏng, video, sơ đồ.</p>
+      <p
+        class="text-sm leading-relaxed mb-3"
+        style="color: var(--text-muted)"
+      >
+        <strong style="color: var(--text-main)">Lò Hóa Vui</strong> được xây dựng với mục tiêu
+        giúp học sinh THPT tiếp cận Hóa học một cách
+        <strong>dễ hiểu</strong>, <strong>trực quan</strong> và
+        <strong>có hệ thống</strong>.
+      </p>
 
-      <h2 class="text-2xl font-semibold">💻 Công nghệ hiện đại</h2>
-      <p>Nuxt 3 · Tailwind CSS · Supabase · Vercel</p>
-    </section>
+      <p
+        class="text-sm leading-relaxed"
+        style="color: var(--text-muted)"
+      >
+        Thay vì học thuộc máy móc, học sinh được khuyến khích
+        <em>quan sát – phân tích – suy luận</em> thông qua
+        thí nghiệm, mô phỏng, bài tập tư duy và ví dụ gắn với thực tế.
+      </p>
+    </GhCard>
 
-    <footer class="pt-6 text-sm text-zinc-500 dark:text-zinc-400">
-      © 2025 Lò Hóa Vui · hocsinh.lohoavui.com
-    </footer>
-  </div>
+    <!-- Vì sao chọn Lò Hóa Vui -->
+    <GhCard>
+      <h2
+        class="text-base font-semibold mb-2"
+        style="color: var(--text-main)"
+      >
+        Vì sao chọn Lò Hóa Vui?
+      </h2>
+
+      <ul
+        class="list-disc pl-5 text-sm space-y-1"
+        style="color: var(--text-muted)"
+      >
+        <li>Nội dung bám sát chương trình Hóa học THPT</li>
+        <li>Trình bày rõ ràng, ưu tiên bản chất thay vì ghi nhớ</li>
+        <li>Thí nghiệm và ví dụ được chọn lọc, an toàn và dễ triển khai</li>
+        <li>Phù hợp cho tự học, ôn tập và mở rộng kiến thức</li>
+      </ul>
+    </GhCard>
+
+    <!-- Định hướng -->
+    <GhCard>
+      <h2
+        class="text-base font-semibold mb-2"
+        style="color: var(--text-main)"
+      >
+        Định hướng phát triển
+      </h2>
+
+      <p
+        class="text-sm leading-relaxed"
+        style="color: var(--text-muted)"
+      >
+        Trong thời gian tới, Lò Hóa Vui sẽ tiếp tục phát triển
+        hệ thống bài học theo từng chủ đề, kết hợp
+        thí nghiệm lượng nhỏ, mô phỏng và học liệu số
+        nhằm nâng cao năng lực tư duy khoa học cho học sinh.
+      </p>
+    </GhCard>
+  </main>
 </template>
