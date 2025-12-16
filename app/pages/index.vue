@@ -2,8 +2,7 @@
 const colorMode = useColorMode()
 
 const toggleTheme = () => {
-  colorMode.preference =
-    colorMode.value === 'dark' ? 'light' : 'dark'
+  colorMode.value = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 </script>
 
@@ -20,13 +19,10 @@ const toggleTheme = () => {
     <button
       @click="toggleTheme"
       class="px-4 py-2 rounded-md
-             bg-zinc-200 hover:bg-zinc-300
-             dark:bg-zinc-700 dark:hover:bg-zinc-600"
+             bg-zinc-200 dark:bg-zinc-700
+             hover:bg-zinc-300 dark:hover:bg-zinc-600"
     >
-      {{ colorMode.value === 'dark'
-        ? '☀ Chế độ sáng'
-        : '🌙 Chế độ tối'
-      }}
+      {{ colorMode.value === 'dark' ? '☀ Chế độ sáng' : '🌙 Chế độ tối' }}
     </button>
 
     <section class="space-y-4">
