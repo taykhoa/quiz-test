@@ -1,19 +1,18 @@
 <template>
   <main class="container">
-    <!-- HERO -->
     <section class="hero">
-      <h1 class="hero-title">
-        🔥 Lò Hóa Vui
-      </h1>
-
-      <p class="hero-subtitle">
-        Nền tảng học Hóa học trực quan, dễ hiểu và hiện đại dành cho học sinh THPT.
-        Tập trung vào <strong>bản chất – tư duy – thí nghiệm</strong>, thay vì học thuộc máy móc.
-      </p>
+      <header>
+        <h1 class="hero-title">
+          🔥 Lò Hóa Vui
+        </h1>
+        <p class="hero-subtitle">
+          Nền tảng học Hóa học trực quan, dễ hiểu và hiện đại dành cho học sinh THPT.
+          Tập trung vào <strong>bản chất – tư duy – thí nghiệm</strong>, thay vì học thuộc máy móc.
+        </p>
+      </header>
     </section>
 
-    <!-- GIỚI THIỆU -->
-    <section class="card">
+    <section class="card card-no-indent"> 
       <h2>Giới thiệu</h2>
 
       <p>
@@ -28,7 +27,6 @@
       </p>
     </section>
 
-    <!-- VÌ SAO -->
     <section class="card">
       <h2>Vì sao chọn Lò Hóa Vui?</h2>
 
@@ -40,7 +38,6 @@
       </ul>
     </section>
 
-    <!-- ĐỊNH HƯỚNG -->
     <section class="card">
       <h2>Định hướng phát triển</h2>
 
@@ -53,7 +50,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
       <p class="footer-brand">
@@ -66,8 +62,19 @@
       </p>
 
       <p class="footer-meta">
-        © {{ new Date().getFullYear() }} Lò Hóa Vui · Made with 💙 for Chemistry
+        © {{ currentYear }} Lò Hóa Vui · Made with 💙 for Chemistry
       </p>
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  // Logic để tính năm hiện tại
+  data() {
+    return {
+      currentYear: new Date().getFullYear()
+    }
+  }
+}
+</script>

@@ -1,140 +1,193 @@
 /* =========================
-   GitHub Dark Color System
+   1. Design Tokens & Variables
    ========================= */
 
 :root {
-  --bg: #ffffff;
-  --bg-card: #f6f8fa;
-  --border: #d0d7de;
+  /* Colors */
+  --color-primary: #0969da; /* Màu chủ đạo/Accent */
 
-  --text-main: #24292f;
-  --text-muted: #57606a;
-  --accent: #0969da;
+  /* Backgrounds */
+  --color-bg-root: #ffffff;
+  --color-bg-card: #f6f8fa;
+
+  /* Borders */
+  --color-border-default: #d0d7de;
+  --color-border-hover: var(--color-primary); 
+
+  /* Text Colors */
+  --color-text-primary: #24292f;
+  --color-text-secondary: #57606a; /* Text Muted */
+
+  /* Typography & Spacing */
+  --font-size-base: 120%;
+  --line-height-base: 1.65;
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  
+  /* Transitions */
+  --transition-speed-fast: 0.25s ease;
+
+  /* Card Component Tokens */
+  --card-padding-y: 1.75rem;
+  --card-padding-x: 2rem;
+  --card-radius: 12px;
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 html.dark {
-  --bg: #0d1117;
-  --bg-card: #161b22;
-  --border: #30363d;
+  /* Colors (Dark Mode Overrides) */
+  --color-primary: #58a6ff;
 
-  --text-main: #f0f6fc;
-  --text-muted: #c9d1d9;
-  --accent: #58a6ff;
+  /* Backgrounds (Dark Mode Overrides) */
+  --color-bg-root: #0d1117;
+  --color-bg-card: #161b22;
+
+  /* Borders (Dark Mode Overrides) */
+  --color-border-default: #30363d;
+
+  /* Text Colors (Dark Mode Overrides) */
+  --color-text-primary: #f0f6fc;
+  --color-text-secondary: #c9d1d9;
 }
 
 /* =========================
-   Global
+   2. Global & Base Styles
    ========================= */
 
 html {
-  background-color: var(--bg);
-  color: var(--text-main);
-  transition: background-color 0.25s ease, color 0.25s ease;
+  font-size: var(--font-size-base);
+  background-color: var(--color-bg-root);
+  color: var(--color-text-primary);
+  /* Tối ưu Transition */
+  transition: background-color var(--transition-speed-fast), 
+              color var(--transition-speed-fast);
 }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
-  line-height: 1.65;
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
 }
 
 /* =========================
-   Layout
+   3. Layout Container
    ========================= */
 
 .container {
-  max-width: 980px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem 1.25rem;
+  /* Phân tách padding để dễ đọc hơn */
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 3rem;
 }
 
 /* =========================
-   Hero
+   4. Hero Section (Block: .hero)
    ========================= */
 
 .hero {
-  margin-bottom: 2.5rem;
+  max-width: 80ch;
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.hero-title {
+.hero-title { /* Element: .hero__title */
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--color-primary);
   margin-bottom: 0.75rem;
 }
 
-.hero-subtitle {
-  font-size: 1.05rem;
-  color: var(--text-main);
-  max-width: 720px;
+.hero-subtitle { /* Element: .hero__subtitle */
+  font-size: 1.15rem;
+  line-height: 1.75; 
+  color: var(--color-text-primary);
+
+  max-width: 72ch;
+  margin-top: 0.75rem;
+
+  text-indent: 1.5em; 
 }
 
 /* =========================
-   Card (GitHub style)
+   5. Card (Block: .card)
    ========================= */
 
 .card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.5rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--card-radius);
+
+  /* Sử dụng biến cho padding */
+  padding: var(--card-padding-y) var(--card-padding-x);
   margin-bottom: 1.75rem;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  box-shadow: var(--card-shadow);
+  /* Thêm transition cho trải nghiệm hover mượt mà */
+  transition: border-color var(--transition-speed-fast), 
+              box-shadow var(--transition-speed-fast);
 }
 
 .card:hover {
-  border-color: var(--accent);
+  border-color: var(--color-border-hover);
+}
+
+/* Áp dụng thụt đầu dòng mặc định cho đoạn văn bản trong Card */
+.card p {
+  text-indent: 1.5em;
+  margin-bottom: 1rem;
+  line-height: 1.75; 
+}
+
+/* **MODIFIER**: Loại bỏ thụt đầu dòng cho đoạn văn bản trong Card */
+.card-no-indent p {
+  text-indent: 0;
 }
 
 .card h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
   font-size: 1.4rem;
 }
 
-.card p {
-  color: var(--text-main);
-  margin-bottom: 0.75rem;
-}
-
 .card ul {
-  padding-left: 1.2rem;
+  padding-left: 1.25rem;
 }
 
 .card li {
   margin-bottom: 0.4rem;
-  color: var(--text-main);
+  color: var(--color-text-primary);
 }
 
 /* =========================
-   Footer
+   6. Footer (Block: .footer)
    ========================= */
 
 .footer {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
   padding: 2.5rem 0;
-  border-top: 1px solid var(--border);
-  background: var(--bg);
+  border-top: 1px solid var(--color-border-default);
+  background: var(--color-bg-root);
 }
 
-.footer-inner {
+.footer-inner { /* Element: .footer__inner */
   text-align: center;
 }
 
-.footer-brand {
+.footer-brand { /* Element: .footer__brand */
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 
-.footer-text {
-  color: var(--text-muted);
+.footer-text { /* Element: .footer__text */
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
   margin-bottom: 0.75rem;
 }
 
-.footer-meta {
+.footer-meta { /* Element: .footer__meta */
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--color-text-secondary);
   opacity: 0.85;
 }
