@@ -1,52 +1,140 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* =========================
+   GitHub Dark Color System
+   ========================= */
 
-/* ================================
-   GitHub Light (default)
-   ================================ */
 :root {
   --bg: #ffffff;
-  --bg-subtle: #f6f8fa;
+  --bg-card: #f6f8fa;
+  --border: #d0d7de;
 
   --text-main: #24292f;
   --text-muted: #57606a;
-
-  --border: #d0d7de;
   --accent: #0969da;
 }
 
-/* ================================
-   GitHub Dark (default)
-   ================================ */
 html.dark {
   --bg: #0d1117;
-  --bg-subtle: #161b22;
-
-  --text-main: #c9d1d9;
-  --text-muted: #8b949e;
-
+  --bg-card: #161b22;
   --border: #30363d;
+
+  --text-main: #f0f6fc;
+  --text-muted: #c9d1d9;
   --accent: #58a6ff;
 }
 
-/* ================================
-   👇 ĐOẠN BẠN HỎI — ĐẶT Ở ĐÂY
-   ================================ */
+/* =========================
+   Global
+   ========================= */
+
 html {
   background-color: var(--bg);
   color: var(--text-main);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* (tuỳ chọn) transition mượt */
-body,
-a,
-button,
-input,
-textarea,
-select {
-  transition:
-    background-color 180ms ease,
-    color 180ms ease,
-    border-color 180ms ease;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  line-height: 1.65;
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+/* =========================
+   Hero
+   ========================= */
+
+.hero {
+  margin-bottom: 2.5rem;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  max-width: 720px;
+}
+
+/* =========================
+   Card (GitHub style)
+   ========================= */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.card p {
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.card ul {
+  padding-left: 1.2rem;
+}
+
+.card li {
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.footer {
+  margin-top: 4rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-brand {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.85;
 }
