@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
-export default <Config>{
-  darkMode: 'class',
+export default <Partial<Config>>{
+  darkMode: 'class',   // ⭐ QUAN TRỌNG
   content: [
     './app/**/*.{vue,js,ts}',
     './components/**/*.{vue,js,ts}',
