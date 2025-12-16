@@ -7,7 +7,7 @@ import ThemeToggle from '~/components/ThemeToggle.vue'
   <main class="p-8 space-y-10 max-w-5xl">
     <!-- Header -->
     <header class="flex items-start justify-between">
-      <div class="space-y-2">
+      <div class="space-y-2 max-w-2xl">
         <h1
           class="text-4xl font-bold"
           style="color: var(--accent)"
@@ -16,7 +16,7 @@ import ThemeToggle from '~/components/ThemeToggle.vue'
         </h1>
 
         <p
-          class="text-base max-w-2xl"
+          class="text-base leading-loose"
           style="color: var(--text-muted)"
         >
           Nền tảng học Hóa học trực quan, dễ hiểu và hiện đại dành cho học sinh THPT.
@@ -30,14 +30,14 @@ import ThemeToggle from '~/components/ThemeToggle.vue'
     <!-- Giới thiệu -->
     <GhCard>
       <h2
-        class="text-base font-semibold mb-2"
+        class="text-base font-semibold tracking-wide mb-2"
         style="color: var(--text-main)"
       >
         Giới thiệu
       </h2>
 
       <p
-        class="text-sm leading-relaxed mb-3"
+        class="text-sm leading-loose mb-3"
         style="color: var(--text-muted)"
       >
         <strong style="color: var(--text-main)">Lò Hóa Vui</strong> được xây dựng với mục tiêu
@@ -47,7 +47,7 @@ import ThemeToggle from '~/components/ThemeToggle.vue'
       </p>
 
       <p
-        class="text-sm leading-relaxed"
+        class="text-sm leading-loose"
         style="color: var(--text-muted)"
       >
         Thay vì học thuộc máy móc, học sinh được khuyến khích
@@ -56,17 +56,17 @@ import ThemeToggle from '~/components/ThemeToggle.vue'
       </p>
     </GhCard>
 
-    <!-- Vì sao chọn Lò Hóa Vui -->
+    <!-- Vì sao chọn -->
     <GhCard>
       <h2
-        class="text-base font-semibold mb-2"
+        class="text-base font-semibold tracking-wide mb-2"
         style="color: var(--text-main)"
       >
         Vì sao chọn Lò Hóa Vui?
       </h2>
 
       <ul
-        class="list-disc pl-5 text-sm space-y-1"
+        class="list-disc pl-5 text-sm leading-loose space-y-1"
         style="color: var(--text-muted)"
       >
         <li>Nội dung bám sát chương trình Hóa học THPT</li>
@@ -79,14 +79,14 @@ import ThemeToggle from '~/components/ThemeToggle.vue'
     <!-- Định hướng -->
     <GhCard>
       <h2
-        class="text-base font-semibold mb-2"
+        class="text-base font-semibold tracking-wide mb-2"
         style="color: var(--text-main)"
       >
         Định hướng phát triển
       </h2>
 
       <p
-        class="text-sm leading-relaxed"
+        class="text-sm leading-loose"
         style="color: var(--text-muted)"
       >
         Trong thời gian tới, Lò Hóa Vui sẽ tiếp tục phát triển
@@ -95,5 +95,13 @@ import ThemeToggle from '~/components/ThemeToggle.vue'
         nhằm nâng cao năng lực tư duy khoa học cho học sinh.
       </p>
     </GhCard>
+
+    <!-- Footer -->
+    <footer
+      class="text-xs pt-6 border-t"
+      style="color: var(--text-muted); border-color: var(--border)"
+    >
+      © 2025 Lò Hóa Vui · Dành cho học sinh THPT
+    </footer>
   </main>
 </template>
