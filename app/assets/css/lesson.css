@@ -1,0 +1,56 @@
+.lesson-block {
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  line-height: 1.8;
+}
+
+.lesson-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ===== Variants ===== */
+
+.lesson-block.intro {
+  border: 1.5px solid #60a5fa;
+  background: var(--bg-subtle);
+}
+
+.lesson-block.info {
+  background: #f0f8ff;
+  border: 1px solid #bfdbfe;
+}
+
+.dark .lesson-block.info {
+  background: #0b1220;
+}
+
+.lesson-block.goal {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.dark .lesson-block.goal {
+  background: #022c22;
+}
+
+.lesson-block.summary {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.dark .lesson-block.summary {
+  background: #2a1f0a;
+}
+
+.lesson-content p + p {
+  margin-top: 0.75rem;
+}
+
+.lesson-content ul {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
