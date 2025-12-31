@@ -1,15 +1,5 @@
 <template>
-  <div class="app-shell">
-    <!-- Toggle sáng / tối toàn hệ thống -->
-    <ThemeToggle />
-
-    <!-- Nội dung từng page -->
+  <NuxtLayout>
     <NuxtPage />
-  </div>
+  </NuxtLayout>
 </template>
-
-<style>
-.app-shell {
-  min-height: 100vh;
-}
-</style>

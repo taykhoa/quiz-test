@@ -1,6 +1,10 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-  <!-- Theme toggle component -->
-  <ThemeToggle />
+  <!-- Theme toggle -->
+  
 
   <!-- Hero -->
   <section class="container hero">
@@ -13,11 +17,49 @@
     </p>
 
     <div class="hero-actions">
-      <button class="btn primary">🚀 Bắt đầu học</button>
-      <button class="btn">📘 Xem lộ trình</button>
-    </div>
+      <NuxtLink to="/lessons" class="btn primary">
+        🚀 Bắt đầu học
+      </NuxtLink>
 
-    <!-- Features -->
+      <NuxtLink to="/lessons" class="btn">
+        📘 Xem lộ trình
+      </NuxtLink>
+    </div>
+  </section>
+
+  <!-- ===== DANH SÁCH BÀI HỌC ===== -->
+  <section class="container py-16">
+    <h2 class="text-2xl font-bold mb-8">
+      📚 Bắt đầu từ đâu?
+    </h2>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <NuxtLink
+        v-for="lesson in lessons"
+        :key="lesson.slug"
+        :to="`/lessons/${lesson.slug}`"
+        class="block rounded-xl border border-white/10
+               bg-white/5 p-5 hover:bg-white/10 transition"
+      >
+        <div class="text-2xl mb-2">{{ lesson.icon }}</div>
+
+        <h3 class="font-semibold text-lg">
+          {{ lesson.title }}
+        </h3>
+
+        <p class="text-sm text-white/70 mt-1">
+          {{ lesson.description }}
+        </p>
+
+        <span class="text-xs text-white/40 block mt-3">
+          {{ lesson.chapter }}
+        </span>
+      </NuxtLink>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="container py-16">
     <div class="features">
       <div class="card">
         <h3>🧠 Học bản chất</h3>
