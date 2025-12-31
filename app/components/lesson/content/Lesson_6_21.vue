@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Breadcrumb from "~/components/lesson/Breadcrumb.vue"
+</script>
+
 <template>
   <main class="max-w-4xl mx-auto px-6 py-10">
 

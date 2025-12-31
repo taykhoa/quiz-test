@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { lessonGroups } from "~/data/lesson"
+import LessonCard from "~/components/lesson/LessonCard.vue"
 </script>
 
 <template>
@@ -9,7 +10,7 @@ import { lessonGroups } from "~/data/lesson"
     </h1>
 
     <div class="space-y-12">
-      <div
+      <section
         v-for="group in lessonGroups"
         :key="group.chapter"
       >
@@ -24,29 +25,16 @@ import { lessonGroups } from "~/data/lesson"
 
         <!-- DANH SÁCH BÀI -->
         <div class="space-y-4">
-          <NuxtLink
+          <LessonCard
             v-for="lesson in group.lessons"
             :key="lesson.slug"
             :to="`/lessons/${lesson.slug}`"
-            class="block rounded-lg border border-white/10
-                   bg-white/5 p-4 hover:bg-white/10 transition"
-          >
-            <div class="flex items-start gap-3">
-              <span class="text-xl">{{ lesson.icon }}</span>
-
-              <div>
-                <h3 class="font-medium">
-                  {{ lesson.title }}
-                </h3>
-
-                <p class="text-sm text-white/70">
-                  {{ lesson.description }}
-                </p>
-              </div>
-            </div>
-          </NuxtLink>
+            :icon="lesson.icon"
+            :title="lesson.title"
+            :description="lesson.description"
+          />
         </div>
-      </div>
+      </section>
     </div>
   </section>
 </template>
