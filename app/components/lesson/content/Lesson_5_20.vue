@@ -1,10 +1,7 @@
-<script setup lang="ts">
-import LessonBlock from "~/components/lesson/LessonBlock.vue"
-</script>
-
 <template>
-  <section class="space-y-10">
-
+  <LessonLayout
+    title="5.20. Cấu hình electron khí hiếm"
+  >
     <!-- ===== I. DẪN NHẬP ===== -->
     <LessonBlock title="Dẫn nhập" icon="🔍" variant="intro">
       <p>
@@ -174,6 +171,5 @@ import LessonBlock from "~/components/lesson/LessonBlock.vue"
         </li>
       </ol>
     </LessonBlock>
-
-  </section>
+  </LessonLayout>
 </template>

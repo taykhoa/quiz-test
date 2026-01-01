@@ -20,6 +20,10 @@ export const lessonGroups = [
     title: "Liên kết hóa học",
     lessons: [
       {
+      slug: "6-20-ionic-radius",
+      title: "6.20. Xu hướng tuần hoàn – Bán kính ion",
+    },
+      {
         slug: "6-21",
         code: "6.21",
         title: "Độ âm điện",

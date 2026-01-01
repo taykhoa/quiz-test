@@ -1,18 +1,8 @@
-<script setup lang="ts">
-import Breadcrumb from "~/components/lesson/Breadcrumb.vue"
-</script>
-
 <template>
-  <main class="max-w-4xl mx-auto px-6 py-10">
-
-    <!-- ===== TIÊU ĐỀ ===== -->
-    <header class="mb-10">
-      <h1 class="text-2xl font-bold">
-        6.21. Xu hướng tuần hoàn:
-        <span class="font-semibold">Độ âm điện</span>
-      </h1>
-    </header>
-
+  <LessonLayout
+    title="6.21. Xu hướng tuần hoàn"
+    subtitle="Độ âm điện"
+  >
     <!-- ===== I. DẪN NHẬP ===== -->
     <LessonBlock title="Dẫn nhập" icon="🔍" variant="intro">
       <p>
@@ -99,7 +89,8 @@ import Breadcrumb from "~/components/lesson/Breadcrumb.vue"
       <h2>3. Xu hướng độ âm điện trong một chu kì</h2>
 
       <p>
-        Trong cùng một chu kì, <strong>độ âm điện tăng dần từ trái sang phải</strong>.
+        Trong cùng một chu kì,
+        <strong>độ âm điện tăng dần từ trái sang phải</strong>.
       </p>
 
       <p>Nguyên nhân:</p>
@@ -119,7 +110,8 @@ import Breadcrumb from "~/components/lesson/Breadcrumb.vue"
       <h2>4. Xu hướng độ âm điện trong một nhóm</h2>
 
       <p>
-        Trong cùng một nhóm, <strong>độ âm điện giảm dần từ trên xuống dưới</strong>.
+        Trong cùng một nhóm,
+        <strong>độ âm điện giảm dần từ trên xuống dưới</strong>.
       </p>
 
       <p>Nguyên nhân:</p>
@@ -174,6 +166,5 @@ import Breadcrumb from "~/components/lesson/Breadcrumb.vue"
         </li>
       </ol>
     </LessonBlock>
-
-  </main>
+  </LessonLayout>
 </template>
