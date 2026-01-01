@@ -5,6 +5,7 @@ import { lessonGroups } from "~/data/lesson"
 
 // import nội dung bài học
 import Lesson_5_20 from "~/components/lesson/content/Lesson_5_20.vue"
+import Lesson_6_19 from "~/components/lesson/content/Lesson_6_19.vue"
 import Lesson_6_20 from "~/components/lesson/content/Lesson_6_20.vue"
 import Lesson_6_21 from "~/components/lesson/content/Lesson_6_21.vue"
 import Lesson_6_22 from "~/components/lesson/content/Lesson_6_22.vue"
@@ -15,6 +16,7 @@ const slug = route.params.slug as string
 // map slug → component
 const lessonComponentMap: Record<string, any> = {
   "5-20-noble-gas": Lesson_5_20,
+  "6-19-ai-luc-electron": Lesson_6_19,
   "6-20-ionic-radius": Lesson_6_20,
   "6-21": Lesson_6_21,
   "6-22": Lesson_6_22,
